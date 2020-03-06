@@ -1,6 +1,6 @@
 import React from 'react';
-import styles from '../../styles';
-import { Text, TouchableOpacity } from 'react-native';
+import { styles } from '../../styles';
+import { Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
 
 const CustomText = ({ style, children }) => {
@@ -16,7 +16,11 @@ const CustomButton = ({ onTab, buttonStyle, titleStyle, children }) => {
 };
 
 const CustomIcon = ({ IconType = FontAwesome, style, name }) => {
-  return <IconType name={name} style={{ ...styles.iconStyle, ...style }} />;
+  return <IconType name={name} style={{ ...styles.iconsStyle, ...style }} />;
 };
 
-export { CustomText, CustomButton, CustomIcon };
+const CustomView = ({ style, children }) => {
+  return <View style={{ ...styles.view, ...style }}>{children}</View>;
+};
+
+export { CustomText, CustomButton, CustomIcon, CustomView };

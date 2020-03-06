@@ -1,20 +1,26 @@
 import { StyleSheet, Dimensions } from 'react-native';
 
-const textColor = '#fff';
-const fragmentColor = 'orange';
-const mainColor = '#262729';
+const THEM = {
+  TEXT_COLOR: '#fff',
+  FRAGMENT_COLOR: 'orange',
+  MAIN_COLOR: '#262729',
+};
 
 const styles = StyleSheet.create({
   view: {
-    backgroundColor: mainColor,
-    height: '100%',
-    alignItems: 'center',
+    flex: 1,
+    backgroundColor: THEM.MAIN_COLOR,
+    paddingVertical: 20,
+    paddingHorizontal: 10,
   },
   text: {
-    color: textColor,
+    color: THEM.TEXT_COLOR,
     fontSize: 20,
     fontFamily: 'Roboto-Regular',
+  },
+  textHeader: {
     textAlign: 'center',
+    marginBottom: 20,
   },
   boldText: {
     fontFamily: 'Roboto-Bold',
@@ -28,65 +34,48 @@ const styles = StyleSheet.create({
     paddingBottom: 15,
     alignItems: 'center',
     justifyContent: 'flex-end',
-    backgroundColor: fragmentColor,
+    backgroundColor: THEM.FRAGMENT_COLOR,
     marginBottom: 20,
   },
   toDoForm: {
     flexDirection: 'row',
     justifyContent: 'space-around',
     alignItems: 'center',
-    marginVertical: 20,
-    marginHorizontal: 10,
-    // width: '100%'
-    // width: Dimensions.get('screen').width
   },
   input: {
-    width: Dimensions.get('window').width * 0.8,
+    width: '80%',
     paddingHorizontal: 20,
     fontSize: 18,
     paddingVertical: 5,
-    color: textColor,
+    color: THEM.TEXT_COLOR,
     borderBottomWidth: 2,
-    borderBottomColor: fragmentColor,
+    borderBottomColor: THEM.FRAGMENT_COLOR,
   },
   button: {
-    backgroundColor: fragmentColor,
+    backgroundColor: THEM.FRAGMENT_COLOR,
     borderWidth: 2,
     borderRadius: 15,
     padding: 5,
-    borderColor: textColor,
+    borderColor: THEM.TEXT_COLOR,
   },
   deleteBtn: {
     backgroundColor: 'red',
   },
   buttonTitle: {
-    fontSize: 14,
-    textAlign: 'center',
+    fontSize: 15,
   },
   container: {
     flexDirection: 'row',
-    margin: 10,
     justifyContent: 'space-between',
     alignItems: 'center',
-    marginVertical: 10,
+    marginTop: 15,
     borderWidth: 2,
-    borderColor: fragmentColor,
+    borderColor: THEM.FRAGMENT_COLOR,
     borderRadius: 15,
     padding: 10,
   },
   taskText: {
     maxWidth: '80%',
-  },
-  taskDone: {
-    color: textColor,
-    fontSize: 20,
-    fontWeight: '700',
-    maxWidth: '55%',
-    textDecorationLine: 'line-through',
-    textDecorationColor: fragmentColor,
-  },
-  modalInput: {
-    width: '80%',
   },
   btnGroup: {
     flexDirection: 'row',
@@ -94,16 +83,14 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     marginTop: 20,
   },
-  flexWrap: {
+  centerFlexWrap: {
     justifyContent: 'center',
+    alignItems: 'center',
   },
-  plusBtn: {
-    width: '20%',
-  },
-  iconStyle: {
+  iconsStyle: {
     fontSize: 20,
-    color: mainColor,
+    color: THEM.MAIN_COLOR,
   },
 });
 
-export default styles;
+export { styles, THEM };

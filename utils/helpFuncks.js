@@ -1,4 +1,5 @@
 import * as Fonts from 'expo-font';
+import { createStackNavigator } from '@react-navigation/stack';
 
 const loadAplication = async () => {
   await Fonts.loadAsync({
@@ -8,4 +9,6 @@ const loadAplication = async () => {
   });
 };
 
-export default loadAplication;
+const Stack = createStackNavigator();
+
+export { loadAplication, Stack };
