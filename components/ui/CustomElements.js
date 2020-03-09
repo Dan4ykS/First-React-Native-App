@@ -1,11 +1,20 @@
 import React from 'react';
-import { styles } from '../../styles';
+import { styles } from '../../styles/styles';
 import { Text, TouchableOpacity, View } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
+import { TextInput } from 'react-native-gesture-handler';
 
 const CustomText = ({ style, children }) => {
   return <Text style={{ ...styles.text, ...style }}>{children}</Text>;
 };
+
+const CustomTextInput = (props, { style }) => { 
+  return <TextInput {...props} style={{...styles.textInput, ...style}} multiline/>
+}
+
+const TextHeader = ({ style, children }) => { 
+  return <CustomText style={{ ...styles.textHeader, ...style }}>{children}</CustomText>
+}
 
 const CustomButton = ({ onTab, buttonStyle, titleStyle, children }) => {
   return (
@@ -23,4 +32,4 @@ const CustomView = ({ style, children }) => {
   return <View style={{ ...styles.view, ...style }}>{children}</View>;
 };
 
-export { CustomText, CustomButton, CustomIcon, CustomView };
+export { CustomText, CustomButton, CustomIcon, CustomView, TextHeader, CustomTextInput };

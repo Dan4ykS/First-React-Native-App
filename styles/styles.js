@@ -10,8 +10,6 @@ const styles = StyleSheet.create({
   view: {
     flex: 1,
     backgroundColor: THEM.MAIN_COLOR,
-    paddingVertical: 20,
-    paddingHorizontal: 10,
   },
   text: {
     color: THEM.TEXT_COLOR,
@@ -20,7 +18,7 @@ const styles = StyleSheet.create({
   },
   textHeader: {
     textAlign: 'center',
-    marginBottom: 20,
+    marginBottom: 10,
   },
   boldText: {
     fontFamily: 'Roboto-Bold',
@@ -42,9 +40,9 @@ const styles = StyleSheet.create({
     justifyContent: 'space-around',
     alignItems: 'center',
   },
-  input: {
+  textInput: {
     width: '80%',
-    paddingHorizontal: 20,
+    paddingHorizontal: 5,
     fontSize: 18,
     paddingVertical: 5,
     color: THEM.TEXT_COLOR,
@@ -73,6 +71,7 @@ const styles = StyleSheet.create({
     borderColor: THEM.FRAGMENT_COLOR,
     borderRadius: 15,
     padding: 10,
+    
   },
   taskText: {
     maxWidth: '80%',
