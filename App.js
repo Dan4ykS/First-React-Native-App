@@ -2,7 +2,7 @@ import React from 'react';
 import store from './store';
 import MainScreen from './screens/Main';
 import ToDoScreen from './screens/ToDo';
-import CartScreen from './screens/Cart';
+import Shop from './components/Shop';
 import BookstoreService from './services/BookstoreService';
 import UsersService from './services/UsersService';
 import { THEM } from './styles/styles';
@@ -13,14 +13,14 @@ import { loadAplication, Stack } from './utils/helpFuncks';
 import { Provider } from 'react-redux';
 import { useState } from 'react';
 import { ServicesProvider } from './components/Context';
-import DBService from './DB';
+import { HeaderButtons, Item } from 'react-navigation-header-buttons';
+import HeaderIcons from './components/HeaderIcons';
 
 const App = () => {
   const [isReady, updateIsReady] = useState(false);
   const services = {
     bookstoreService: new BookstoreService(),
     usersService: new UsersService(),
-    dbService: new DBService(),
   };
 
   if (!isReady) {
@@ -32,9 +32,20 @@ const App = () => {
       <ServicesProvider value={services}>
         <NavigationContainer>
           <Stack.Navigator initialRouteName='Home' screenOptions={{ headerStyle: { backgroundColor: THEM.FRAGMENT_COLOR }, headerTintColor: THEM.TEXT_COLOR }}>
-            <Stack.Screen options={{ title: 'Главная' }} name='Home' component={MainScreen} />
+            <Stack.Screen
+              options={{
+                headerTitle: 'Главная',
+                headerRight: () =>  (
+                  <HeaderButtons HeaderButtonComponent={HeaderIcons}>
+                    <Item title='home icon' iconName='home' />
+                  </HeaderButtons>
+                ),
+              }}
+              name='Home'
+              component={MainScreen}
+            />
             <Stack.Screen options={{ title: 'Список дел' }} name='ToDo' component={ToDoScreen} />
-            <Stack.Screen options={{ title: 'Корзина' }} name='Cart' component={CartScreen} />
+            <Stack.Screen options={{ title: 'Магазин' }} name='Shop' component={Shop} />
           </Stack.Navigator>
         </NavigationContainer>
       </ServicesProvider>

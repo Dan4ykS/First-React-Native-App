@@ -90,6 +90,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     color: THEM.MAIN_COLOR,
   },
+  iconInTabs: {
+    marginTop: 10,
+    fontSize: 30
+  }
 });
 
 export { styles, THEM };

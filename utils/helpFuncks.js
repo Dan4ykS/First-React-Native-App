@@ -1,8 +1,9 @@
 import * as Fonts from 'expo-font';
-import { createStackNavigator } from '@react-navigation/stack';
-import { Keyboard, Alert, Platform } from 'react-native';
 import DBService from '../DB';
-import BookStoreService from '../services/BookstoreService';
+import { createStackNavigator } from '@react-navigation/stack';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { Keyboard, Alert, Platform } from 'react-native';
+
 
 const loadAplication = async () => {
   await Fonts.loadAsync({
@@ -14,6 +15,7 @@ const loadAplication = async () => {
 };
 
 const Stack = createStackNavigator();
+const Tab = createBottomTabNavigator();
 
 const confDataForLogicComp = (loading, error, funcForLogic) => {
   return {
@@ -70,4 +72,7 @@ const updTask = (deleteTask, onChangeModalVisiable, tasks, taskForEditing) => as
   }
 };
 
-export { loadAplication, Stack, confDataForLogicComp, addTask, openModalScreen, updTask, delTask };
+export {
+  loadAplication,
+  Stack, confDataForLogicComp, addTask, openModalScreen, updTask, delTask, Tab
+};

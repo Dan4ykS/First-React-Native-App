@@ -10,7 +10,7 @@ const MainScreen = ({ navigation }) => {
         <CustomButton buttonStyle={{ width: '50%', marginTop: 10 }} titleStyle={{ textAlign: 'center' }} onTab={() => navigation.navigate('ToDo')}>
           Список дел
         </CustomButton>
-        <CustomButton buttonStyle={{ width: '50%', marginTop: 10 }} titleStyle={{ textAlign: 'center' }} onTab={() => navigation.navigate('Cart')}>
+        <CustomButton buttonStyle={{ width: '50%', marginTop: 10 }} titleStyle={{ textAlign: 'center' }} onTab={() => navigation.navigate('Shop')}>
           Продукция
         </CustomButton>
       </View>

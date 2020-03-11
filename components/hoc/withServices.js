@@ -7,7 +7,6 @@ const withServices = () => (Component) => {
     return (
       <ServicesConsumer>
         {(services) => {
-          console.log(services)
           return <Component {...props} services={services} />;
         }}
       </ServicesConsumer>

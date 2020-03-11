@@ -20,7 +20,6 @@ const fetchBooksFailure = (error) => {
 
 const fetchBooks = (dispatch, { bookstoreService }) => () => {
   dispatch(fetchBooksRequest());
-  console.log(bookstoreService)
   bookstoreService
     .getBooks()
     .then((data) => dispatch(fetchBooksSuccuess(data)))
