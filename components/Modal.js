@@ -1,6 +1,6 @@
 import React from 'react';
 import { styles } from '../styles/styles';
-import { Modal, View, TextInput, Keyboard, TouchableWithoutFeedback } from 'react-native';
+import { Modal, View, TextInput, Keyboard, TouchableWithoutFeedback, Platform } from 'react-native';
 import { CustomButton, CustomText, CustomTextInput } from './ui/CustomElements';
 import { useState } from 'react';
 
@@ -17,7 +17,7 @@ const EditModal = ({ changeModalVisiable, taskForEdit, updateTask }) => {
             <CustomButton buttonStyle={{ backgroundColor: 'green' }} onTab={() => updateTask(task)}>
               Сохранить
             </CustomButton>
-            <CustomButton buttonStyle={{}} onTab={() => changeModalVisiable(false)}>
+            <CustomButton onTab={() => changeModalVisiable(false)} >
               Отменить
             </CustomButton>
           </View>

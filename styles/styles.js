@@ -71,7 +71,6 @@ const styles = StyleSheet.create({
     borderColor: THEM.FRAGMENT_COLOR,
     borderRadius: 15,
     padding: 10,
-    
   },
   taskText: {
     maxWidth: '80%',
@@ -91,9 +90,16 @@ const styles = StyleSheet.create({
     color: THEM.MAIN_COLOR,
   },
   iconInTabs: {
+    fontSize: 30,
+  },
+  iconInTabsIos: {
     marginTop: 10,
-    fontSize: 30
-  }
+  },
+  iconInTabsAndroid: {
+    fontSize: 27,
+    width: 35,
+    letterSpacing: 5,
+  },
 });
 
 export { styles, THEM };

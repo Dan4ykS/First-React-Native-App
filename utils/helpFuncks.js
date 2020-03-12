@@ -2,6 +2,7 @@ import * as Fonts from 'expo-font';
 import DBService from '../DB';
 import { createStackNavigator } from '@react-navigation/stack';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Keyboard, Alert, Platform } from 'react-native';
 
 
@@ -15,7 +16,7 @@ const loadAplication = async () => {
 };
 
 const Stack = createStackNavigator();
-const Tab = createBottomTabNavigator();
+const Tab = Platform.OS === 'ios' ? createBottomTabNavigator() : createMaterialBottomTabNavigator() ;
 
 const confDataForLogicComp = (loading, error, funcForLogic) => {
   return {
@@ -55,11 +56,17 @@ const updTask = (deleteTask, onChangeModalVisiable, tasks, taskForEditing) => as
       [
         {
           text: 'Отмна',
-          style: 'cancel',
+          style: Platform.select({
+            ios: 'cancel',
+            android: 'neutral',
+          }),
         },
         {
           text: 'Удалить задачу',
-          style: 'destructive',
+          style: Platform.select({
+            android: 'negative',
+            ios: 'destructive',
+          }),
           onPress: () => deleteTask(oldElem),
         },
       ],

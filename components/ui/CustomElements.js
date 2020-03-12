@@ -1,26 +1,29 @@
 import React from 'react';
 import { styles } from '../../styles/styles';
-import { Text, TouchableOpacity, View } from 'react-native';
+import { Text, TouchableOpacity, View, Platform, TextInput, TouchableNativeFeedback } from 'react-native';
 import { FontAwesome } from '@expo/vector-icons';
-import { TextInput } from 'react-native-gesture-handler';
 
 const CustomText = ({ style, children }) => {
   return <Text style={{ ...styles.text, ...style }}>{children}</Text>;
 };
 
-const CustomTextInput = (props, { style }) => { 
-  return <TextInput {...props} style={{...styles.textInput, ...style}} multiline/>
-}
+const CustomTextInput = (props, { style }) => {
+  return <TextInput {...props} style={{ ...styles.textInput, ...style }} multiline />;
+};
 
-const TextHeader = ({ style, children }) => { 
-  return <CustomText style={{ ...styles.textHeader, ...style }}>{children}</CustomText>
-}
+const TextHeader = ({ style, children }) => {
+  return <CustomText style={{ ...styles.textHeader, ...style }}>{children}</CustomText>;
+};
 
 const CustomButton = ({ onTab, buttonStyle, titleStyle, children }) => {
+  const Wrap = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
+  console.log(onTab)
   return (
-    <TouchableOpacity activeOpacity={0.6} background={'orange'} style={{ ...styles.button, ...buttonStyle }} onPress={onTab}>
-      <Text style={{ ...styles.buttonTitle, ...titleStyle }}>{children}</Text>
-    </TouchableOpacity>
+    <Wrap onPress={onTab} activeOpacity={0.6}>
+      <View style={{ ...styles.button, ...buttonStyle }}>
+        <Text style={{ ...styles.buttonTitle, ...titleStyle }}>{children}</Text>
+      </View>
+    </Wrap>
   );
 };
 
