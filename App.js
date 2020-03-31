@@ -5,6 +5,7 @@ import ToDoScreen from './screens/ToDo';
 import Shop from './components/Shop';
 import BookstoreService from './services/BookstoreService';
 import UsersService from './services/UsersService';
+import HeaderIcons from './components/HeaderIcons';
 import { THEM } from './styles/styles';
 import { BackHandler } from 'react-native';
 import { AppLoading } from 'expo';
@@ -14,7 +15,6 @@ import { Provider } from 'react-redux';
 import { useState } from 'react';
 import { ServicesProvider } from './components/Context';
 import { HeaderButtons, Item } from 'react-navigation-header-buttons';
-import HeaderIcons from './components/HeaderIcons';
 
 const App = () => {
   const [isReady, updateIsReady] = useState(false);

@@ -17,7 +17,6 @@ const TextHeader = ({ style, children }) => {
 
 const CustomButton = ({ onTab, buttonStyle, titleStyle, children }) => {
   const Wrap = Platform.OS === 'android' ? TouchableNativeFeedback : TouchableOpacity;
-  console.log(onTab)
   return (
     <Wrap onPress={onTab} activeOpacity={0.6}>
       <View style={{ ...styles.button, ...buttonStyle }}>

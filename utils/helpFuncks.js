@@ -1,10 +1,9 @@
 import * as Fonts from 'expo-font';
 import DBService from '../DB';
 import { createStackNavigator } from '@react-navigation/stack';
-import { createBottomTabNavigator } from '@react-navigation/bottom-tabs'
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import { createMaterialBottomTabNavigator } from '@react-navigation/material-bottom-tabs';
 import { Keyboard, Alert, Platform } from 'react-native';
-
 
 const loadAplication = async () => {
   await Fonts.loadAsync({
@@ -16,7 +15,7 @@ const loadAplication = async () => {
 };
 
 const Stack = createStackNavigator();
-const Tab = Platform.OS === 'ios' ? createBottomTabNavigator() : createMaterialBottomTabNavigator() ;
+const Tab = Platform.OS === 'ios' ? createBottomTabNavigator() : createMaterialBottomTabNavigator();
 
 const confDataForLogicComp = (loading, error, funcForLogic) => {
   return {
@@ -79,7 +78,4 @@ const updTask = (deleteTask, onChangeModalVisiable, tasks, taskForEditing) => as
   }
 };
 
-export {
-  loadAplication,
-  Stack, confDataForLogicComp, addTask, openModalScreen, updTask, delTask, Tab
-};
+export { loadAplication, Stack, confDataForLogicComp, addTask, openModalScreen, updTask, delTask, Tab };
